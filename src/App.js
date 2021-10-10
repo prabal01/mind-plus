@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
+import { get, set } from "idb-keyval";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import WelcomePage from "./components/WelcomePage/WelcomePage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const checkIfLoggedIn = () => {
+    get("isLoggedIn").then((data) => {
+      if (data) setIsLoggedIn(true);
+    });
+  };
+
+  //check if the user has already in login state when the app starts
+  useEffect(() => {
+    checkIfLoggedIn();
+    if (isLoggedIn) console.log("user is logged in");
+  }, []);
+  console.log(isLoggedIn)
+  return <div className="App">
+    {isLoggedIn? <Router>
+      <Switch>
+        <Route exact path='/'>
+          Hello World
+        </Route>
+      </Switch>
+    </Router>:
+    <WelcomePage/>}
+  </div>;
 }
 
 export default App;
