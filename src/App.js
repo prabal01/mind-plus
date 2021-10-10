@@ -1,8 +1,9 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { get, set } from "idb-keyval";
+import { get } from "idb-keyval";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
+import Homepage from "./components/Homepage/Homepage";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -16,14 +17,12 @@ function App() {
   useEffect(() => {
     checkIfLoggedIn();
     if (isLoggedIn) console.log("user is logged in");
-  }, []);
-  console.log(isLoggedIn)
+  }, [isLoggedIn]);
+  console.log("is user logged in: ",isLoggedIn)
   return <div className="App">
-    {isLoggedIn? <Router>
+    {isLoggedIn ? <Router>
       <Switch>
-        <Route exact path='/'>
-          Hello World
-        </Route>
+        <Route exact path='/' component={Homepage} />
       </Switch>
     </Router>:
     <WelcomePage/>}

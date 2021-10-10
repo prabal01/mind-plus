@@ -31,6 +31,10 @@
     outline: none;
 }
 
+.appName{
+    color: rgb(255, 0, 0);
+}
+
 .buttonDiv {
   display: flex;
   justify-content: right;

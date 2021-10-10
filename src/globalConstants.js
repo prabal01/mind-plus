@@ -1,1 +1,1 @@
-export const appName = 'Mind Plus'
+export const appName = 'Mind Plus' 
