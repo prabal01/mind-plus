@@ -29,7 +29,7 @@ export default function Homepage() {
   return (
     <div className={style.homePageWrapper}>
       
-      <p className={style.headerTxt}> Add new Question </p>
+      <p className={style.headerTxt}> Hi {userName}, Add new Question </p>
       <input
             type="text"
             className={style.nameField}

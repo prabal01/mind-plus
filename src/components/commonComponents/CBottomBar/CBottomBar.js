@@ -1,5 +1,4 @@
 import React from 'react'
-import urls from '../../../configMap'
 import style from './style.module.css'
 import MaterialIcon from 'material-icons-react';
 
