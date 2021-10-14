@@ -2,3 +2,14 @@
 overflow: hidden;
 font-family: 'Roboto', sans-serif;
 }
+input {
+    border: 1px solid #605ff6;
+    width: 92%;
+    height: 40px;
+    border-radius: 12px;
+    padding-left: 20px;
+  }
+  
+input{
+    width: 70%;
+}

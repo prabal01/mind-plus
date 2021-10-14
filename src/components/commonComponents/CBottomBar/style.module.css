@@ -1,0 +1,18 @@
+.bottomBarDiv{
+    height: 90px;
+    width: 100vw;
+    box-shadow: 0 0 20px darkgray;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.bottomButton{
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
